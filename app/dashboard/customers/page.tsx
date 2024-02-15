@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Table from '@/app/ui/customers/table';
 import { Suspense } from 'react';
-import { TableRowSkeleton } from '@/app/ui/skeletons';
+import { CustomersTableSkeleton } from '@/app/ui/skeletons';
 import { fetchFilteredCustomers } from '@/app/lib/data';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default async function Page({
 
   return (
     <div className="w-full">
-      <Suspense fallback={<TableRowSkeleton />}>
+      <Suspense fallback={<CustomersTableSkeleton />}>
         <Table customers={customers} />
       </Suspense>
     </div>
